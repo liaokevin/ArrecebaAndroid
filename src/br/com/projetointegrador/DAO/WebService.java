@@ -1,23 +1,40 @@
 package br.com.projetointegrador.DAO;
 
+import java.util.Enumeration;
+import java.util.Hashtable;
+
 import org.ksoap2.SoapEnvelope;
+import org.ksoap2.SoapFault;
 import org.ksoap2.serialization.SoapObject;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.AndroidHttpTransport;
 
 public class WebService {
 	private static final String NAMESPACE = "http://tempuri.org/";
+	protected static final String APPTOKEN = "49849FF2-DC74-45EF-ABE4-A0A0FB3A08BD";
 
-	public static SoapObject InvokeMethod(String URL, String MethodName) {
-		SoapObject request = GetSoapObject(MethodName);
+	public static Object InvokeMethod(String URL, String MethodName) {
+		return InvokeMethod(URL, MethodName, null);
+	}
+
+	public static Object InvokeMethod(String URL, String MethodName, Hashtable<String, Object> parameters) {
+		SoapObject request = GetSoapObject(MethodName, parameters);
 		SoapSerializationEnvelope envelope = GetEnvelope(request);
 		return MakeCall(URL, envelope, NAMESPACE, MethodName);
 	}
 
-	public static SoapObject GetSoapObject(String MethodName) {
+	public static SoapObject GetSoapObject(String MethodName, Hashtable<String, Object> parameters) {
 		SoapObject so = new SoapObject(NAMESPACE, MethodName);
-		so.addProperty("login", "admin");
-		so.addProperty("password", "123");
+		
+		if (parameters != null) {
+			Enumeration<String> Estring = parameters.keys();
+			
+			while (Estring.hasMoreElements()) {
+				String key = (String) Estring.nextElement();
+				
+				so.addProperty(key, parameters.get(key));
+			}
+		}
 		
 		return so;
 	}
@@ -41,7 +58,7 @@ public class WebService {
 	 *            - The method name
 	 * @return - SoapObject containing the resultset
 	 */
-	public static SoapObject MakeCall(String URL, SoapSerializationEnvelope Envelope, String NAMESPACE, String METHOD_NAME) {
+	public static Object MakeCall(String URL, SoapSerializationEnvelope Envelope, String NAMESPACE, String METHOD_NAME) {
 		AndroidHttpTransport androidHttpTransport = new AndroidHttpTransport(URL);
 		Object obj = null;
 		try {
@@ -51,8 +68,14 @@ public class WebService {
 			e.printStackTrace();
 
 		}
-		SoapObject response = (SoapObject) obj;
-		return response;
+		return obj;
 	}
 
+	protected static boolean hasError(Object response) {
+		if (response instanceof SoapFault) {
+			return true;
+		}
+		return false;
+	}
+	
 }

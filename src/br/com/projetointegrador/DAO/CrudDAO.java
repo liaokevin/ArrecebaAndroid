@@ -1,18 +1,33 @@
 package br.com.projetointegrador.DAO;
 
+import java.util.Hashtable;
+
 import org.ksoap2.serialization.SoapObject;
 
+import android.util.Log;
 import br.com.projetointegrador.TO.Crud;
+import br.com.projetointegrador.TO.User;
 
 public class CrudDAO extends WebService {
 	private static final String URL = "http://10.0.2.2:1922/Services/CrudWS.asmx";
 
-	public static Crud[] GetList() {
+	public static Crud[] GetList(User user) {
 		String MethodName = "Index";
-		SoapObject response = InvokeMethod(URL, MethodName);
-		return RetrieveListFromSoap(response);
-	}
+		
 
+		Hashtable<String, Object> parameters = new Hashtable<String, Object>();
+		parameters.put("login", user.Login);
+		parameters.put("password", user.Password);
+		
+		Object response = InvokeMethod(URL, MethodName, parameters);
+		
+		if (hasError(response)) {
+			Log.d("GetList", "Error on response");
+			return null;
+		}
+		
+		return RetrieveListFromSoap((SoapObject) response);
+	}
 
 	private static Crud RetrieveFromSoap(SoapObject soap) {
 		Crud crud = new Crud();

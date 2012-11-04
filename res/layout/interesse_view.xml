@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+    <RelativeLayout android:layout_width="match_parent" android:id="@+interesse_list/relative_layout" android:layout_height="wrap_content">
+        <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/checkBox1" android:layout_alignParentTop="true" android:layout_alignParentRight="true"></CheckBox>
+        <TextView android:id="@+id/textView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignBaseline="@+id/checkBox1" android:layout_alignBottom="@+id/checkBox1" android:layout_alignParentLeft="true"></TextView>
+    </RelativeLayout>
+    
+</LinearLayout>
