@@ -2,7 +2,6 @@ package br.com.projetointegrador;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
@@ -14,11 +13,6 @@ import br.com.projetointegrador.TO.User;
 public class ArrecebaAndroidActivity extends Activity {
 	
 	protected static User user;
-	
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-	}
 	
 	public void onResume() {
 		super.onResume();

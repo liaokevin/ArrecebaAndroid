@@ -73,7 +73,7 @@ public class FrmLogin extends ArrecebaAndroidActivity {
 			
 			ArrecebaAndroidActivity.user = user;
 			
-			redirect(FrmCrudList.class);
+			redirect(FrmMenu.class);
 			return true;
 		} else {
 			makeDialog("Erro", "Login ou senha inválidos");
