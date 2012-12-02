@@ -2,7 +2,6 @@ package br.com.projetointegrador;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
@@ -14,11 +13,6 @@ import br.com.projetointegrador.TO.User;
 public class ArrecebaAndroidActivity extends Activity {
 	
 	protected static User user;
-	
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-	}
 	
 	public void onResume() {
 		super.onResume();
@@ -43,21 +37,13 @@ public class ArrecebaAndroidActivity extends Activity {
 			redirect(ArrecebaAndroidActivity.class);
 		}
 	};
-
+	
 	public void redirect(Class<?> cls) {
-		startActivity(new Intent(this, cls));
+		startActivity(new Intent(this , cls));
 	}
 	
-	public void makeDialog(String title, String txt) {
-//		Dialog d = new Dialog(this);
-//		d.setTitle(title);
-//		TextView tv = new TextView(this);
-//		tv.setText(txt);
-//		d.setContentView(tv); 
-//	
-//		d.show();
-		
-		Toast.makeText(this, txt, 2000).show();
+	public void makeDialog(String title , String txt) {
+		Toast.makeText(this , txt , Toast.LENGTH_SHORT).show();
 	}
 	
 	public void logout() {

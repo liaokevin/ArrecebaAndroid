@@ -14,10 +14,10 @@ import br.com.projetointegrador.TO.User;
 
 public class FrmLogin extends ArrecebaAndroidActivity {
 	
-	public Button registrarse, bt_login;
-	public EditText login, senha;
+	public Button registrarse , bt_login;
+	public EditText login , senha;
 	public CheckBox lembrarsenha;
-
+	
 	public void onCreate(Bundle savedInstanceState) {
 		if (user == null) {
 			user = new User();
@@ -62,9 +62,12 @@ public class FrmLogin extends ArrecebaAndroidActivity {
 		user.Login = login.getText().toString();
 		user.Password = senha.getText().toString();
 		
-		user = SystemDAO.Login(user);
-		
-		if (user.UserId > 0) {
+		try {
+			user = SystemDAO.Login(user);
+			
+			if (!(user.UserId > 0)) {
+				throw new Exception();
+			}
 			user.LembrarSenha = lembrarsenha.isChecked() ? 'S' : 'N';
 			
 			UserDAO dao = new UserDAO(this);
@@ -73,12 +76,11 @@ public class FrmLogin extends ArrecebaAndroidActivity {
 			
 			ArrecebaAndroidActivity.user = user;
 			
-			redirect(FrmCrudList.class);
+			redirect(FrmMenu.class);
 			return true;
-		} else {
-			makeDialog("Erro", "Login ou senha inválidos");
+		} catch (Exception e) {
+			makeDialog("Erro" , "Login ou senha inválidos");
 			return false;
 		}
 	}
-	
 }

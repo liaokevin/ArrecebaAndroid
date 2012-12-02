@@ -1,6 +1,5 @@
 package br.com.projetointegrador.Frm;
 
-import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import br.com.projetointegrador.ArrecebaAndroidActivity;
@@ -8,11 +7,6 @@ import br.com.projetointegrador.ArrecebaAndroidActivity;
 public class FrmLogadoBase extends ArrecebaAndroidActivity {
 	private static final int INTERESSES = 0;
 	private static final int LOGOUT = 1;
-
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

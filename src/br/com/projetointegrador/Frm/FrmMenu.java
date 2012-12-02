@@ -26,7 +26,7 @@ public class FrmMenu extends FrmLogadoBase {
 	
 	private void setListeners() {
 		bt_logout.setOnClickListener(allListener);
-		bt_logout.setOnClickListener(allListener);
+		bt_crud_list.setOnClickListener(allListener);
 	}
 	
 	private OnClickListener allListener = new OnClickListener() {

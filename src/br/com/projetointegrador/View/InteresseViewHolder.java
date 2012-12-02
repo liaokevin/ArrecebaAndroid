@@ -1,4 +1,4 @@
-package br.com.projetointegrador.TO;
+package br.com.projetointegrador.View;
 
 import android.widget.CheckBox;
 import android.widget.TextView;
