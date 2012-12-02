@@ -17,7 +17,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 import br.com.projetointegrador.R;
 import br.com.projetointegrador.DAO.InteresseDAO;
-import br.com.projetointegrador.TO.InteresseVector;
 import br.com.projetointegrador.View.Interesse;
 import br.com.projetointegrador.View.InteresseViewHolder;
 
@@ -74,13 +73,7 @@ public class FrmInteresse extends FrmLogadoBase {
 				}
 			}
 			
-			InteresseVector selecionadoVetor = new InteresseVector();
-			selecionadoVetor.list = new int[selecionadoList.size()];
-			for (int i = 0 ; i < selecionadoList.size() ; i++) {
-				selecionadoVetor.list[i] = selecionadoList.get(i);
-			}
-			
-			InteresseDAO.UpdatePreferences(user , selecionadoVetor);
+			InteresseDAO.UpdatePreferences(user , selecionadoList);
 		}
 	};
 	
