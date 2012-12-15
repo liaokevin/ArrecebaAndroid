@@ -17,7 +17,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import br.com.projetointegrador.R;
 import br.com.projetointegrador.DAO.InteresseDAO;
-import br.com.projetointegrador.View.Interesse;
+import br.com.projetointegrador.TO.Interesse;
 import br.com.projetointegrador.View.InteresseViewHolder;
 
 public class FrmInteresse extends FrmLogadoBase {

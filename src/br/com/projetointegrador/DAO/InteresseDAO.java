@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 import org.ksoap2.serialization.SoapObject;
 import android.util.Log;
+import br.com.projetointegrador.TO.Interesse;
 import br.com.projetointegrador.TO.User;
-import br.com.projetointegrador.View.Interesse;
 
 public class InteresseDAO extends WebService {
-	private static final String URL = "http://10.0.2.2:1922/Services/CategoriaWS.asmx";
+	private static final String URL = "http://192.168.173.1:1922/Services/CategoriaWS.asmx";
 	
 	public static Interesse[] GetList(User user) {
 		String MethodName = "ListSubcategoriasAndPreferences";

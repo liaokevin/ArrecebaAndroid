@@ -1,4 +1,4 @@
-package br.com.projetointegrador.View;
+package br.com.projetointegrador.TO;
 
 public class Interesse {
 	

@@ -7,7 +7,7 @@ import android.view.View.OnClickListener;
 import android.widget.Toast;
 import br.com.projetointegrador.DAO.UserDAO;
 import br.com.projetointegrador.Frm.FrmLogin;
-import br.com.projetointegrador.Frm.FrmMenu;
+import br.com.projetointegrador.Frm.FrmProdutos;
 import br.com.projetointegrador.TO.User;
 
 public class ArrecebaAndroidActivity extends Activity {
@@ -25,7 +25,7 @@ public class ArrecebaAndroidActivity extends Activity {
 			if (user == null || user.LembrarSenha == 'N') {
 				redirect(FrmLogin.class);
 			} else {
-				redirect(FrmMenu.class);
+				redirect(FrmProdutos.class);
 			}
 		}
 	}
