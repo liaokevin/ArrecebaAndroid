@@ -9,7 +9,7 @@ import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.AndroidHttpTransport;
 
 public class WebService {
-	public static final String URL = "http://192.168.173.1:1919";
+	public static final String URL = "http://192.168.43.5/ArrecebaWS";
 	protected static final String NAMESPACE = "http://tempuri.org/";
 	protected static final String APPTOKEN = "49849FF2-DC74-45EF-ABE4-A0A0FB3A08BD";
 	

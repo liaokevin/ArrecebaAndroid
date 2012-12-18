@@ -1,106 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" >
-
-    <TextView
-        android:id="@+registrarse/tv1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nome"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <EditText
-        android:id="@+registrarse/ti_nome"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName" >
-
-        <requestFocus />
-    </EditText>
-
-    <TextView
-        android:id="@+registrarse/tv2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sexo"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <RadioGroup
-        android:id="@+registrarse/rdog_sexo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" android:orientation="horizontal">
-
-        <RadioButton
-            android:id="@+registrarse/rdo_sexo_m"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:tag="M"
-            android:text="Masculino" />
-
-        <RadioButton
-            android:id="@+registrarse/rdo_sexo_f"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:tag="F"
-            android:text="Feminino" />
-
-    </RadioGroup>
-
-    <TextView
-        android:id="@+registrarse/tv3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Email"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <EditText
-        android:id="@+registrarse/ti_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textEmailAddress" />
-
-    <TextView
-        android:id="@+registrarse/tv4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Login"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <EditText
-        android:id="@+registrarse/ti_login"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10" />
-
-    <TextView
-        android:id="@+registrarse/tv5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Senha"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <EditText
-        android:id="@+registrarse/ti_senha"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPassword" />
-
-    <Button
-        android:id="@+registrarse/bt_registrarse"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Registrar-se" />
-
-    <Button
-        android:id="@+registrarse/bt_cancelar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Cancelar" />
-
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical" >
+	<ScrollView
+		android:id="@+id/scrollView1"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content" >
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical" >
+			<TextView
+				android:id="@+registrarse/tv1"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Nome"
+				android:textAppearance="?android:attr/textAppearanceLarge" />
+			<EditText
+				android:id="@+registrarse/ti_nome"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:ems="10"
+				android:inputType="textPersonName" />
+			<TextView
+				android:id="@+registrarse/tv2"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Sexo"
+				android:textAppearance="?android:attr/textAppearanceLarge" />
+			<RadioGroup
+				android:id="@+registrarse/rdog_sexo"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal" >
+				<RadioButton
+					android:id="@+registrarse/rdo_sexo_m"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:checked="true"
+					android:tag="M"
+					android:text="Masculino" />
+				<RadioButton
+					android:id="@+registrarse/rdo_sexo_f"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:tag="F"
+					android:text="Feminino" />
+			</RadioGroup>
+			<TextView
+				android:id="@+registrarse/tv3"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Email"
+				android:textAppearance="?android:attr/textAppearanceLarge" />
+			<EditText
+				android:id="@+registrarse/ti_email"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:ems="10"
+				android:inputType="textEmailAddress" />
+			<TextView
+				android:id="@+registrarse/tv4"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Login"
+				android:textAppearance="?android:attr/textAppearanceLarge" />
+			<EditText
+				android:id="@+registrarse/ti_login"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:ems="10" />
+			<TextView
+				android:id="@+registrarse/tv5"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Senha"
+				android:textAppearance="?android:attr/textAppearanceLarge" />
+			<EditText
+				android:id="@+registrarse/ti_senha"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:ems="10"
+				android:inputType="textPassword" />
+			<Button
+				android:id="@+registrarse/bt_registrarse"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Registrar-se" />
+			<Button
+				android:id="@+registrarse/bt_cancelar"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Cancelar" />
+		</LinearLayout>
+	</ScrollView>
 </LinearLayout>

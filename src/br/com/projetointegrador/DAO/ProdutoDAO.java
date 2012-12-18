@@ -8,7 +8,7 @@ import br.com.projetointegrador.TO.Produto;
 import br.com.projetointegrador.TO.User;
 
 public class ProdutoDAO extends WebService {
-	private static final String URL = "http://192.168.173.1:1922/Services/ProdutoWS.asmx";
+	private static final String URL = "http://192.168.43.5/ArrecebaWS/Services/ProdutoWS.asmx";
 	
 	public static Produto[] GetList(User user) {
 		String MethodName = "ListByUserPreferences";

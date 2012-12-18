@@ -7,7 +7,7 @@ import br.com.projetointegrador.TO.Crud;
 import br.com.projetointegrador.TO.User;
 
 public class CrudDAO extends WebService {
-	private static final String URL = "http://192.168.173.1:1922/Services/CrudWS.asmx";
+	private static final String URL = "http://192.168.43.5/ArrecebaWS/Services/CrudWS.asmx";
 	
 	public static Crud[] GetList(User user) {
 		String MethodName = "Index";

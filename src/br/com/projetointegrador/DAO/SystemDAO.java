@@ -5,7 +5,7 @@ import org.ksoap2.serialization.SoapObject;
 import br.com.projetointegrador.TO.User;
 
 public class SystemDAO extends WebService {
-	private static final String URL = "http://192.168.173.1:1922/Services/UserWS.asmx";
+	private static final String URL = "http://192.168.43.5/ArrecebaWS/Services/UserWS.asmx";
 	
 	public static boolean CreateUser(User user) {
 		String MethodName = "Create";

@@ -8,7 +8,7 @@ import br.com.projetointegrador.TO.Interesse;
 import br.com.projetointegrador.TO.User;
 
 public class InteresseDAO extends WebService {
-	private static final String URL = "http://192.168.173.1:1922/Services/CategoriaWS.asmx";
+	private static final String URL = "http://192.168.43.5/ArrecebaWS/Services/CategoriaWS.asmx";
 	
 	public static Interesse[] GetList(User user) {
 		String MethodName = "ListSubcategoriasAndPreferences";
